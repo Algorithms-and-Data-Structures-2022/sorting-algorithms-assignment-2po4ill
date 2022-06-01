@@ -18,9 +18,11 @@ namespace assignment {
     }
 
     // вычисляем индекс опорного элемента ... median_of_three ...
-    int pivot_index = -1 /* напишите здесь свой код ... */;
-
+    int medindex = median_of_three(arr, start, stop);
+    int pivot_index = partition(arr, start, stop, medindex);
     // производим разбиение относительно опорного элемента ...  partition ...
+    quick_sort(arr, start, pivot_index - 1);
+    quick_sort(arr, pivot_index + 1, stop);
     // рекурсивно повторяем процедуру над левой и правой частью ...
   }
 
